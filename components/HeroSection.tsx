@@ -15,8 +15,7 @@ export function HeroSection() {
             The complete platform to <span className="text-primary">Specialists</span>
           </h1>
           <p className="font-sans mt-6 text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Find vetted specialists across every profession — designers, plumbers, educators and more — hire trusted
-            experts for any job quickly, securely, and affordably. Used by 10 000+ professionals.
+            Quickly find the right specialist for your task. 100 clients have already connected with trusted professionals on our platform.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
@@ -24,7 +23,7 @@ export function HeroSection() {
               <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Search for services or specialists..."
+                placeholder="Specialist or services"
                 className="font-sans h-14 pl-12 pr-4 text-base bg-card border-border"
               />
             </div>

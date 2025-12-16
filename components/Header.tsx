@@ -5,6 +5,7 @@ import { useState } from "react"
 import { LoginModal } from "./LoginModal"
 import { SignupModal } from "./SignupModal"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Header() {
   const [showLogin, setShowLogin] = useState(false)
@@ -16,7 +17,12 @@ export function Header() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-primary" />
+              <Image
+              src="/quickhands.png"
+              height={24}
+              width={24}
+              alt="Quickhands Logo"
+              />
               <span className="font-sans text-xl font-bold">Quickhands</span>
             </Link>
             <nav className="hidden items-center gap-6 md:flex">

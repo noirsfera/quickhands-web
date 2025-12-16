@@ -45,11 +45,11 @@ export default function Marketplace() {
         {/* Header */}
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground">
-            Hire trusted professionals — instantly
+            Trusted specialists near you
           </h2>
           <p className="font-sans mt-4 text-muted-foreground leading-relaxed">
-            Over <span className="text-primary font-semibold">438,000 specialists</span> working locally and
-            <span className="text-primary font-semibold"> 452,000 available remotely</span> — ready to help today.
+            Choose from <span className="text-primary font-semibold">200,000+ local specialists</span>or 
+            <span className="text-primary font-semibold">2,600+ remote professionals </span>, all ready to help when you need them.
           </p>
         </div>
 
@@ -91,10 +91,10 @@ export default function Marketplace() {
         <div className="relative mt-24 overflow-hidden rounded-xl border border-border bg-card">
           <div className="grid gap-8 p-10 md:grid-cols-2 md:items-center">
             <div>
-              <h3 className="font-sans text-3xl font-bold text-foreground">Try the new Quickhands app</h3>
+              <h3 className="font-sans text-3xl font-bold text-foreground">The Quickhands app is launching in January</h3>
               <p className="font-sans mt-3 max-w-md text-muted-foreground leading-relaxed">
-                Book professionals, chat securely, and manage jobs on the go. Trusted by over
-                <span className="text-primary font-medium"> 120,000+ active clients</span> worldwide.
+                Be the first to get access by joining
+                <span className="text-primary font-medium"> Waitlist </span>
               </p>
 
               <div className="mt-6 flex flex-wrap gap-4">

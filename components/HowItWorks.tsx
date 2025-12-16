@@ -1,28 +1,40 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Search, Users, CheckCircle, Zap } from "lucide-react"
+import { Clipboard, Search, MessageSquare, CreditCard ,Star, } from "lucide-react";
+
 
 const steps = [
   {
+    icon: Clipboard,
+    title: "Clients post tasks",
+    description:
+      "Clients describe their task in detail and suggest a budget that fits their needs.",
+  },
+  {
     icon: Search,
-    title: "Post Your Project",
-    description: "Describe your project needs and budget. Our AI will match you with the perfect freelancers.",
+    title: "Choose the orders that suit you",
+    description:
+      "Browse available tasks and select the ones that match your skills, availability, and preferences.",
   },
   {
-    icon: Users,
-    title: "Review Proposals",
-    description: "Receive proposals from qualified freelancers. Review portfolios, ratings, and experience.",
+    icon: MessageSquare,
+    title: "Send your offer",
+    description:
+      "Respond to tasks, discuss requirements, and agree on pricing privately with the client.",
   },
   {
-    icon: Zap,
-    title: "Collaborate & Work",
-    description: "Use our built-in tools to communicate, share files, and track progress in real-time.",
+    icon: CreditCard,
+    title: "Complete the work and get paid",
+    description:
+      "Deliver the work, mark the task as complete, and receive your payment securely within the app.",
   },
   {
-    icon: CheckCircle,
-    title: "Pay Securely",
-    description: "Release payment only when you're 100% satisfied. Protected by our money-back guarantee.",
+    icon: Star,
+    title: "Build your reputation",
+    description:
+      "Earn verified reviews, strengthen your profile, and attract more clients over time.",
   },
-]
+];
+
 
 export function HowItWorks() {
   return (

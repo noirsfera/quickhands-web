@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Schibsted_Grotesk, Martian_Mono } from "next/font/google"
 import "./globals.css"
+import { ClerkProvider } from "@clerk/nextjs"
 
 const schibstedGrotesk = Schibsted_Grotesk({
   variable: "--font-schibsted-grotesk",
@@ -26,6 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`
@@ -41,5 +43,6 @@ export default function RootLayout({
         <main>{children}</main>
       </body>
     </html>
+  </ClerkProvider>
   )
 }
