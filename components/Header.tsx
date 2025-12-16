@@ -44,24 +44,22 @@ export function Header() {
               >
                 How It Works
               </a>
-              <Link
+              
+            </nav>
+          </div>
+          <div className="flex items-center gap-3">
+            <Link
                 href="/professionals"
                 className="font-sans text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 Website for professionals
               </Link>
-            </nav>
-          </div>
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" onClick={() => setShowLogin(true)} className="font-sans">
-              Log in
-            </Button>
             <Button
               size="sm"
               className="font-sans bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={() => setShowSignup(true)}
             >
-              Sign Up
+              Login and Registration
             </Button>
           </div>
         </div>
