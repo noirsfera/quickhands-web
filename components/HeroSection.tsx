@@ -15,7 +15,7 @@ export function HeroSection() {
           Quickly find the right  <span className="text-primary">Specialists</span> for your tasks.
           </h1>
           <p className="font-sans mt-6 text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Quickly find the right specialist for your task. 100 clients have already connected with trusted professionals on our platform.
+            0 clients have already connected with trusted professionals on our platform.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
@@ -33,15 +33,6 @@ export function HeroSection() {
             >
               Search
             </Button>
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-            <span className="font-sans">Trusted by:</span>
-            <div className="flex flex-wrap items-center gap-6">
-              <span className="font-sans font-semibold">Designers</span>
-              <span className="font-sans font-semibold">Plumbers</span>
-              <span className="font-sans font-semibold">Educators</span>
-            </div>
           </div>
         </div>
       </div>

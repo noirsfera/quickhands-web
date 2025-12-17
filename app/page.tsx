@@ -1,13 +1,11 @@
 import { Header } from "@/components/Header"
 import { HeroSection } from "@/components/HeroSection"
-import { Stats } from "@/components/Stats"
-import { FeaturedJobs } from "@/components/FeaturedJobs"
 import { HowItWorks } from "@/components/HowItWorks"
 import Marketplace from "@/components/MarketPlace"
 import { Footer } from "@/components/Footer"
 import { Features } from "@/components/Features"
-import { Faq } from "@/components/FAQ"
-import { PricingPlans } from "@/components/PricingPlans"
+import { ClientFAQ } from "@/components/ClientFAQ"
+
 
 export default function Home() {
   return (
@@ -15,9 +13,9 @@ export default function Home() {
       <Header />
       <HeroSection />
       <Features />
-      <Stats />
       <HowItWorks />
       <Marketplace />
+      <ClientFAQ />
       <Footer />
     </>
   )

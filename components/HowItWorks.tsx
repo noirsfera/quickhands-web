@@ -42,7 +42,6 @@ export function HowItWorks() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="font-sans text-4xl font-bold tracking-tight">How It Works</h2>
-          <p className="font-sans mt-4 text-lg text-muted-foreground">Get started in minutes with our simple process</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">

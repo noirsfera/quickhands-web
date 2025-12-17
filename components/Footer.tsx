@@ -16,7 +16,7 @@ export function Footer() {
               <span className="font-sans text-lg font-bold">Quickhands</span>
             </div>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-              The complete platform to run your freelance business like a pro.
+              The complete platform specialists and.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-sans mb-4 font-semibold">For Freelancers</h3>
+            <h3 className="font-sans mb-4 font-semibold">For Specialists</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="#" className="font-sans hover:text-foreground transition-colors">

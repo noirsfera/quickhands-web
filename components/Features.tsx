@@ -37,14 +37,7 @@ export function Features() {
   return (
     <section id="features" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h2 className="font-sans text-4xl font-bold tracking-tight">
-            Why Choose Us
-          </h2>
-          <p className="font-sans mt-4 text-lg text-muted-foreground">
-            Built on trust, transparency, and quality results
-          </p>
-        </div>
+        
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => {

@@ -2,53 +2,36 @@ import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import {  Star, TrendingUp, Users, Zap, ClipboardList, Search, MessageSquare, CreditCard  } from "lucide-react"
+import { Star, TrendingUp, Users, Zap, ClipboardList, Search, MessageSquare, CreditCard } from "lucide-react"
 import { Faq } from "@/components/FAQ"
 import { PricingPlans } from "@/components/PricingPlans"
-
-
-
+import { OnboardingModal } from "@/components/OnboardingModal"
 const steps = [
   {
     icon: ClipboardList,
-    title: "Clients post tasks",
+    title: "Create Profile",
     description:
-      "Clients describe their task in detail and suggest a budget.",
+      "Start by creating your professional profile with detailed information about your skills and experience.",
   },
   {
     icon: Search,
-    title: "Choose the orders that suit you",
-    description:
-      "Browse available tasks and select the ones that match your skills and schedule.",
+    title: "Find Projects",
+    description: "Use our advanced search filters to find projects that match your expertise and location.",
   },
   {
     icon: MessageSquare,
-    title: "Send your offer",
-    description:
-      "Respond to the task and discuss pricing and details privately with the client.",
+    title: "Bid on Projects",
+    description: "Submit competitive bids and proposals to showcase your capabilities to potential clients.",
   },
   {
     icon: CreditCard,
-    title: "Complete the work and get paid",
-    description:
-      "Finish the task and receive your payment securely within the app.",
+    title: "Get Paid",
+    description: "Manage your finances with secure payment processing and customizable invoicing options.",
   },
-  {
-    icon: Star,
-    title: "Build your reputation",
-    description:
-      "Earn reviews, grow your profile, and attract even more clients.",
-  },
-];
-
+]
 
 export default function ProfessionalsPage() {
   const features = [
-    {
-      icon: Users,
-      title: "Build Your Brand",
-      description: "Create a stunning professional profile that showcases your expertise and attracts premium clients.",
-    },
     {
       icon: TrendingUp,
       title: "Grow Your Business",
@@ -58,12 +41,7 @@ export default function ProfessionalsPage() {
       icon: Zap,
       title: "Work Efficiently",
       description: "Manage proposals, contracts, and payments all in one place with our powerful professional tools.",
-    },
-    {
-      icon: Star,
-      title: "Premium Support",
-      description: "Get priority support and dedicated account management to help you succeed on the platform.",
-    },
+    }
   ]
 
   const benefits = [
@@ -93,7 +71,7 @@ export default function ProfessionalsPage() {
             </div>
 
             <h1 className="font-sans text-balance text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-7xl sm:leading-tight">
-              Earn money doing what you’re great at
+              Earn money doing what you are great at
             </h1>
 
             <p className="font-sans mt-6 text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
@@ -101,26 +79,21 @@ export default function ProfessionalsPage() {
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">
-              <Button
-                size="lg"
-                className="font-sans h-14 bg-primary text-primary-foreground hover:bg-primary/90 px-8 font-medium"
-              >
-                Register with your email
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="font-sans h-14 border-border text-foreground hover:bg-card px-8 font-medium bg-transparent"
-              >
-                View Pricing
-              </Button>
+              <OnboardingModal>
+                <Button
+                  size="lg"
+                  className="font-sans h-14 bg-primary text-primary-foreground hover:bg-primary/90 px-8 font-medium"
+                >
+                  Register with your email
+                </Button>
+              </OnboardingModal>
             </div>
 
             <p className="font-sans mt-6 text-sm text-muted-foreground">
-              We’ll send you a confirmation code — no spam, no advertising.
+              We'll send you a confirmation code — no spam, no advertising.
             </p>
-             <p className="font-sans mt-6 text-sm text-muted-foreground">
-              By signing up, you’ll be automatically notified when the app launches in January.
+            <p className="font-sans mt-6 text-sm text-muted-foreground">
+              By signing up, you'll be automatically notified when the app launches in January.
             </p>
           </div>
         </div>
@@ -129,12 +102,6 @@ export default function ProfessionalsPage() {
       {/* Features Section */}
       <section className="py-24 border-b border-border/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-sans text-4xl font-bold tracking-tight">Everything You Need to Succeed</h2>
-            <p className="font-sans mt-4 text-lg text-muted-foreground">
-              Professional tools designed for serious freelancers and agencies
-            </p>
-          </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => {
@@ -155,40 +122,42 @@ export default function ProfessionalsPage() {
         </div>
       </section>
 
-          <section id="how" className="py-20">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="mb-12 text-center">
-                <h2 className="font-sans text-4xl font-bold tracking-tight">How It Works</h2>
-                <p className="font-sans mt-4 text-lg text-muted-foreground">Get started in minutes with our simple process</p>
-              </div>
-      
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                {steps.map((step, index) => {
-                  const Icon = step.icon
-                  return (
-                    <div key={step.title} className="relative">
-                      <Card className="h-full border-border bg-card">
-                        <CardContent className="pt-6">
-                          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                            <Icon className="h-6 w-6 text-primary" />
-                          </div>
-                          <div className="absolute -top-3 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
-                            <span className="font-mono">{index + 1}</span>
-                          </div>
-                          <h3 className="font-sans mb-2 text-xl font-semibold">{step.title}</h3>
-                          <p className="font-sans text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </section>
+      <section id="how" className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="font-sans text-4xl font-bold tracking-tight">How It Works</h2>
+            <p className="font-sans mt-4 text-lg text-muted-foreground">
+              Get started in minutes with our simple process
+            </p>
+          </div>
 
-        <PricingPlans />
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon
+              return (
+                <div key={step.title} className="relative">
+                  <Card className="h-full border-border bg-card">
+                    <CardContent className="pt-6">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div className="absolute -top-3 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                        <span className="font-mono">{index + 1}</span>
+                      </div>
+                      <h3 className="font-sans mb-2 text-xl font-semibold">{step.title}</h3>
+                      <p className="font-sans text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
 
-        <Faq />
+      <PricingPlans />
+
+      <Faq />
 
       <Footer />
     </>

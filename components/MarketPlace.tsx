@@ -181,8 +181,8 @@ export default function Marketplace() {
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground">Trusted specialists near you</h2>
           <p className="font-sans mt-4 text-muted-foreground leading-relaxed">
-            Choose from <span className="text-primary font-semibold">200,000+ local specialists </span>or
-            <span className="text-primary font-semibold"> 2,600+ remote professionals </span>, all ready to help when
+            Choose from <span className="text-primary font-semibold">0 local specialists </span>or
+            <span className="text-primary font-semibold"> 0 remote professionals </span>, all ready to help when
             you need them.
           </p>
         </div>
