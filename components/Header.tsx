@@ -6,6 +6,8 @@ import { LoginModal } from "./LoginModal"
 import { SignupModal } from "./SignupModal"
 import Link from "next/link"
 import Image from "next/image"
+import { Menu } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export function Header() {
   const [showLogin, setShowLogin] = useState(false)
@@ -13,54 +15,102 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-              src="/quickhands.png"
-              height={24}
-              width={24}
-              alt="Quickhands Logo"
-              />
-              <span className="font-sans text-xl font-bold">Quickhands</span>
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 transition-all duration-200">
+        <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-10">
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <div className="relative">
+                <Image
+                  src="/quickhands.png"
+                  height={32}
+                  width={32}
+                  alt="Quickhands Logo"
+                  className="transition-transform duration-200 group-hover:scale-105"
+                />
+              </div>
+              <span className="font-sans text-xl font-bold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
+                Quickhands
+              </span>
             </Link>
-            <nav className="hidden items-center gap-6 md:flex">
-              <a
+
+            <nav className="hidden items-center gap-1 lg:flex">
+              <Link
                 href="#jobs"
-                className="font-sans text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="relative px-4 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50 group"
               >
                 Find Work
-              </a>
-              <a
+                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-200 group-hover:w-3/4 group-hover:left-[12.5%]" />
+              </Link>
+              <Link
                 href="#talent"
-                className="font-sans text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="relative px-4 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50 group"
               >
                 Find Talent
-              </a>
-              <a
+                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-200 group-hover:w-3/4 group-hover:left-[12.5%]" />
+              </Link>
+              <Link
                 href="#how"
-                className="font-sans text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="relative px-4 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50 group"
               >
                 How It Works
-              </a>
-              
+                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-200 group-hover:w-3/4 group-hover:left-[12.5%]" />
+              </Link>
             </nav>
           </div>
-          <div className="flex items-center gap-3">
+
+          <div className="flex items-center gap-4">
             <Link
-                href="/professionals"
-                className="font-sans text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Website for professionals
-              </Link>
+              href="/professionals"
+              className="hidden lg:block px-3 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50"
+            >
+              Website for professionals
+            </Link>
+
             <Button
-              size="sm"
-              className="font-sans bg-primary text-primary-foreground hover:bg-primary/90"
+              size="lg"
+              className="font-sans text-[15px] font-semibold bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm hover:shadow-md transition-all duration-200 px-6 rounded-lg"
               onClick={() => setShowSignup(true)}
             >
               Login and Registration
             </Button>
+
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="lg:hidden">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col gap-4 mt-8">
+                  <Link
+                    href="#jobs"
+                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
+                  >
+                    Find Work
+                  </Link>
+                  <Link
+                    href="#talent"
+                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
+                  >
+                    Find Talent
+                  </Link>
+                  <Link
+                    href="#how"
+                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
+                  >
+                    How It Works
+                  </Link>
+                  <div className="border-t border-border my-2" />
+                  <Link
+                    href="/professionals"
+                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
+                  >
+                    Website for professionals
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>

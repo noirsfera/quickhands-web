@@ -11,7 +11,7 @@ import {
   MessageSquare,
   CreditCard,
 } from "lucide-react"
-import { Faq } from "@/components/FAQ"
+import {  FaqSection } from "@/components/FAQ"
 import { PricingPlans } from "@/components/PricingPlans"
 import { OnboardingModal } from "@/components/OnboardingModal"
 
@@ -162,7 +162,7 @@ export default function ProfessionalsPage() {
       </section>
 
       <PricingPlans />
-      <Faq />
+      <FaqSection />
       <Footer />
     </>
   )
