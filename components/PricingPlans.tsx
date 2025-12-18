@@ -6,8 +6,8 @@ export function PricingPlans() {
     <section className="py-24 border-t border-border/40 bg-card/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-sans text-4xl font-bold tracking-tight mb-4">Pricing Plans</h2>
-          <p className="font-sans text-lg text-muted-foreground">Flexible pricing options to match your workflow</p>
+          <h2 className="font-sans text-4xl font-bold tracking-tight mb-4">Tariffs</h2>
+          <p className="font-sans text-lg text-muted-foreground">Flexible tariff options to match your workflow</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">

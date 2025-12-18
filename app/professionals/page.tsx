@@ -95,32 +95,6 @@ export default function ProfessionalsPage() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="border-b border-border/40 py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {features.map((feature) => {
-              const Icon = feature.icon
-              return (
-                <Card key={feature.title} className="border-border bg-card">
-                  <CardContent className="pt-6">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary/10">
-                      <Icon className="h-6 w-6 text-secondary" />
-                    </div>
-                    <h3 className="mb-2 font-sans text-xl font-semibold">
-                      {feature.title}
-                    </h3>
-                    <p className="font-sans text-sm leading-relaxed text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* How It Works */}
       <section id="how" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

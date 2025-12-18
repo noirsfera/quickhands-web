@@ -2,6 +2,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
+import { Button } from "./ui/button"
 
 const faqs = [
   {
@@ -55,6 +56,7 @@ export function FaqSection() {
             <h2 className="font-sans text-4xl font-bold tracking-tight mb-4 text-balance">
               Frequently Asked Questions
             </h2>
+
             <p className="font-sans text-lg text-muted-foreground leading-relaxed mb-8 text-pretty">
               Everything you need to know about working on Quickhands. Can't find what you're looking for? Contact our
               support team.
@@ -92,6 +94,16 @@ export function FaqSection() {
               ))}
             </Accordion>
           </div>
+        </div>
+
+        {/* Centered CTA */}
+        <div className="mt-16 flex justify-center">
+          <Button
+            size="lg"
+            className="h-14 px-8 font-sans font-medium bg-secondary text-secondary-foreground hover:bg-secondary/90"
+          >
+            Sign Up
+          </Button>
         </div>
       </div>
     </section>
