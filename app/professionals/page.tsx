@@ -18,26 +18,36 @@ import { OnboardingModal } from "@/components/OnboardingModal"
 const steps = [
   {
     icon: ClipboardList,
-    title: "Create Profile",
+    title: "Clients post tasks",
     description:
-      "Start by creating your professional profile with detailed information about your skills and experience.",
+      "Clients describe their task in detail and suggest a budget.",
   },
   {
     icon: Search,
-    title: "Find Projects",
-    description: "Use our advanced search filters to find projects that match your expertise and location.",
+    title: "Choose the orders that suit you",
+    description:
+      "Browse available tasks and select the ones that match your skills and schedule.",
   },
   {
     icon: MessageSquare,
-    title: "Bid on Projects",
-    description: "Submit competitive bids and proposals to showcase your capabilities to potential clients.",
+    title: "Send your offer",
+    description:
+      "Respond to the task and discuss pricing and details privately with the client.",
   },
   {
     icon: CreditCard,
-    title: "Get Paid",
-    description: "Manage your finances with secure payment processing and customizable invoicing options.",
+    title: "Complete the work and get paid",
+    description:
+      "Finish the task and receive your payment securely within the app.",
+  },
+  {
+    icon: Star,
+    title: "Build your reputation",
+    description:
+      "Earn reviews, grow your profile, and attract even more clients.",
   },
 ]
+
 
 export default function ProfessionalsPage() {
   const features = [
