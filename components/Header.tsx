@@ -8,6 +8,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ClientLogin } from "./ClientLogin"
 
 export function Header() {
   const [showLogin, setShowLogin] = useState(false)
@@ -66,13 +67,14 @@ export function Header() {
               Website for professionals
             </Link>
 
+            <ClientLogin>
             <Button
-              size="lg"
-              className="font-sans text-[15px] font-semibold bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm hover:shadow-md transition-all duration-200 px-6 rounded-lg"
-              onClick={() => setShowSignup(true)}
-            >
-              Login and Registration
-            </Button>
+                  size="lg"
+                  className="h-14 bg-primary px-8 font-sans font-medium text-primary-foreground hover:bg-primary/90"
+                >
+                  Register 
+                </Button>
+            </ClientLogin>
 
             <Sheet>
               <SheetTrigger asChild>
