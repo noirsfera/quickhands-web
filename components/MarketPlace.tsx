@@ -8,7 +8,7 @@ import Image from "next/image"
 const categories = [
   {
     title: "Tutors & Education",
-    count: 243_817,
+    count: 0,
     items: [
       "English tutoring",
       "Mathematics",
@@ -24,7 +24,7 @@ const categories = [
   },
   {
     title: "Home & Repair Services",
-    count: 198_462,
+    count: 0,
     items: [
       "Plumbers",
       "Electricians",
@@ -40,7 +40,7 @@ const categories = [
   },
   {
     title: "Beauty & Personal Care",
-    count: 112_905,
+    count: 0,
     items: [
       "Makeup artists",
       "Hair stylists / Braiders",
@@ -55,7 +55,7 @@ const categories = [
   },
   {
     title: "Freelancers & Digital Services",
-    count: 164_733,
+    count: 0,
     items: [
       "Graphic designers",
       "Web designers & developers",
@@ -71,7 +71,7 @@ const categories = [
   },
   {
     title: "Business & Legal Services",
-    count: 58_214,
+    count: 0,
     items: [
       "Accountants",
       "Bookkeepers",
@@ -86,7 +86,7 @@ const categories = [
   },
   {
     title: "Sports & Wellness",
-    count: 41_689,
+    count: 0,
     items: [
       "Personal trainers",
       "Fitness instructors",
@@ -100,7 +100,7 @@ const categories = [
   },
   {
     title: "Arts & Entertainment",
-    count: 53_407,
+    count: 0,
     items: [
       "Musicians",
       "DJs",
@@ -115,7 +115,7 @@ const categories = [
   },
   {
     title: "Domestic & Household Staff",
-    count: 69_528,
+    count: 0,
     items: [
       "Housekeepers",
       "Cleaners",
@@ -130,7 +130,7 @@ const categories = [
   },
   {
     title: "Driving & Transport",
-    count: 31_964,
+    count: 0,
     items: [
       "Driving instructors (manual & automatic)",
       "Motorcycle riding instructors",
@@ -144,7 +144,7 @@ const categories = [
   },
   {
     title: "Animal & Pet Services",
-    count: 18_372,
+    count: 0,
     items: [
       "Veterinarians",
       "Veterinary assistants",
@@ -157,7 +157,7 @@ const categories = [
   },
   {
     title: "Other Popular Services",
-    count: 92_146,
+    count: 0,
     items: [
       "Mobile money agents",
       "Phone repair technicians",
