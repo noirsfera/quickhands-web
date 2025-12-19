@@ -3,6 +3,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
 import { Button } from "./ui/button"
+import { OnboardingModal } from "./OnboardingModal"
 
 const faqs = [
   {
@@ -98,12 +99,14 @@ export function FaqSection() {
 
         {/* Centered CTA */}
         <div className="mt-16 flex justify-center">
+        <OnboardingModal>
           <Button
             size="lg"
             className="h-14 px-8 font-sans font-medium bg-secondary text-secondary-foreground hover:bg-secondary/90"
           >
             Sign Up
           </Button>
+        </OnboardingModal>
         </div>
       </div>
     </section>
