@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       user: result[0],
     })
   } catch (error) {
-    console.error("[v0] Onboarding error:", error)
+    console.error(" Onboarding error:", error)
     return NextResponse.json({ error: "Failed to create user profile" }, { status: 500 })
   }
 }

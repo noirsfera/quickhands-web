@@ -127,10 +127,38 @@ export function ClientLogin({ children }: ClientLoginProps) {
 
           {error && <div className="text-sm text-destructive">{error}</div>}
           {success && (
-            <div className="text-sm text-green-600">
-              Successfully registered as client
-            </div>
-          )}
+  <div className="rounded-lg border border-green-200 bg-green-50 p-4 text-sm text-green-900 space-y-3">
+    <p className="font-semibold text-base">
+      Welcome to QuickHands Africa 👋
+    </p>
+
+    <p>
+      Your account is now active. You’re ready to start finding jobs and growing
+      your business using your skills.
+    </p>
+
+    <div>
+      <p className="font-medium">With QuickHands Africa, you get:</p>
+      <ul className="list-disc list-inside mt-1 space-y-1">
+        <li>Unlimited access to job opportunities</li>
+        <li>Safe and secure payments</li>
+        <li>Direct communication with verified users</li>
+      </ul>
+    </div>
+
+    <p>
+      Complete your profile, stay active, and start connecting with clients
+      today.
+    </p>
+
+    <p className="font-medium">
+      We’re glad to have you with us.
+      <br />
+      <span className="text-green-800">The QuickHands Africa Team</span>
+    </p>
+  </div>
+)}
+
 
           <DialogFooter>
             <Button type="submit" disabled={loading} className="w-full">
