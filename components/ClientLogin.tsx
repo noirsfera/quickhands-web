@@ -133,26 +133,26 @@ export function ClientLogin({ children }: ClientLoginProps) {
     </p>
 
     <p>
-      Your account is now active. You’re ready to start finding jobs and growing
-      your business using your skills.
+      Your account is now active.
+      You’re ready to find trusted professionals and get your work done with confidence.
     </p>
 
     <div>
-      <p className="font-medium">With QuickHands Africa, you get:</p>
+      <p className="font-medium">With QuickHands Africa, you can:</p>
       <ul className="list-disc list-inside mt-1 space-y-1">
-        <li>Unlimited access to job opportunities</li>
-        <li>Safe and secure payments</li>
-        <li>Direct communication with verified users</li>
+        <li>Find skilled and verified service providers</li>
+        <li>Compare options and choose what works best for you</li>
+        <li>Communicate directly and securely</li>
+        <li>C Get quality work done faster and stress-free</li>
       </ul>
     </div>
 
     <p>
-      Complete your profile, stay active, and start connecting with clients
-      today.
+      For tips, updates, and new services, please follow us on our social media platforms.
     </p>
 
     <p className="font-medium">
-      We’re glad to have you with us.
+      Post a job, connect with the right hands, and get started today.
       <br />
       <span className="text-green-800">The QuickHands Africa Team</span>
     </p>
