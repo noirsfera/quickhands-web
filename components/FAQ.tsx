@@ -50,22 +50,22 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section className="py-24 border-t border-border/40">
+    <section className="py-24 border-t border-neutral-700 bg-neutral-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-8">
-            <h2 className="font-sans text-4xl font-bold tracking-tight mb-4 text-balance">
+            <h2 className="font-sans text-4xl font-bold tracking-tight mb-4 text-balance text-white">
               Frequently Asked Questions
             </h2>
 
-            <p className="font-sans text-lg text-muted-foreground leading-relaxed mb-8 text-pretty">
+            <p className="font-sans text-lg text-neutral-300 leading-relaxed mb-8 text-pretty">
               Everything you need to know about working on Quickhands. Can't find what you're looking for? Contact our
               support team.
             </p>
 
             <div className="relative w-full max-w-md mt-12 mx-auto lg:mx-0">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-3xl blur-3xl opacity-60" />
-              <div className="relative bg-gradient-to-br from-background/50 to-background/80 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 via-green-600/10 to-transparent rounded-3xl blur-3xl opacity-60" />
+              <div className="relative bg-gradient-to-br from-neutral-800/80 to-neutral-800/60 backdrop-blur-sm rounded-2xl p-8 border border-neutral-700">
                 <Image
                   src="/illustrations/undraw_questions.svg"
                   alt="Frequently asked questions"
@@ -83,12 +83,12 @@ export function FaqSection() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="border border-border bg-card rounded-lg px-6 data-[state=open]:bg-card/80 data-[state=open]:border-primary/30 transition-all shadow-sm hover:shadow-md hover:border-primary/20"
+                  className="border border-neutral-700 bg-neutral-800/50 rounded-lg px-6 data-[state=open]:bg-neutral-800/80 data-[state=open]:border-green-600/40 transition-all shadow-md hover:shadow-lg hover:border-green-600/30"
                 >
-                  <AccordionTrigger className="font-sans text-left text-base font-semibold hover:text-primary hover:no-underline py-5">
+                  <AccordionTrigger className="font-sans text-left text-base font-semibold text-white hover:text-green-500 hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="font-sans text-muted-foreground leading-relaxed pb-5">
+                  <AccordionContent className="font-sans text-neutral-300 leading-relaxed pb-5">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -97,16 +97,15 @@ export function FaqSection() {
           </div>
         </div>
 
-        {/* Centered CTA */}
         <div className="mt-16 flex justify-center">
-        <OnboardingModal>
-          <Button
-            size="lg"
-            className="h-14 px-8 font-sans font-medium bg-secondary text-secondary-foreground hover:bg-secondary/90"
-          >
-            Sign Up
-          </Button>
-        </OnboardingModal>
+          <OnboardingModal>
+            <Button
+              size="lg"
+              className="h-14 px-8 font-sans font-medium bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              Sign Up
+            </Button>
+          </OnboardingModal>
         </div>
       </div>
     </section>
