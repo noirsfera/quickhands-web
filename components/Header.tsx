@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { useState } from "react"
 import { LoginModal } from "./LoginModal"
 import { SignupModal } from "./SignupModal"
@@ -9,16 +9,29 @@ import Image from "next/image"
 import { Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ClientLogin } from "./ClientLogin"
+import { cn } from "@/lib/utils"
 
 export function Header() {
   const [showLogin, setShowLogin] = useState(false)
   const [showSignup, setShowSignup] = useState(false)
 
+  const links = [
+    { label: "Find Work", href: "#jobs" },
+    { label: "Find Talent", href: "#talent" },
+    { label: "How It Works", href: "#how" },
+  ]
+
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 transition-all duration-200">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-10">
+      <header
+        className={cn(
+          "sticky top-5 z-50",
+          "mx-auto w-full max-w-5xl rounded-lg border shadow",
+          "bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur-lg"
+        )}
+      >
+        <nav className="mx-auto flex items-center justify-between p-1.5">
+          <div className="hover:bg-accent flex cursor-pointer items-center gap-2 rounded-md px-2 py-1 duration-100">
             <Link href="/" className="flex items-center gap-2.5 group">
               <div className="relative">
                 <Image
@@ -33,89 +46,80 @@ export function Header() {
                 Quickhands
               </span>
             </Link>
-
-            <nav className="hidden items-center gap-1 lg:flex">
-              <Link
-                href="#jobs"
-                className="relative px-4 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50 group"
-              >
-                Find Work
-                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-200 group-hover:w-3/4 group-hover:left-[12.5%]" />
-              </Link>
-              <Link
-                href="#talent"
-                className="relative px-4 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50 group"
-              >
-                Find Talent
-                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-200 group-hover:w-3/4 group-hover:left-[12.5%]" />
-              </Link>
-              <Link
-                href="#how"
-                className="relative px-4 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50 group"
-              >
-                How It Works
-                <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-200 group-hover:w-3/4 group-hover:left-[12.5%]" />
-              </Link>
-            </nav>
           </div>
 
-          <div className="flex items-center gap-4">
-            <Link
-              href="/professionals"
-              className="hidden lg:block px-3 py-2 font-sans text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:text-foreground rounded-lg hover:bg-accent/50"
+          <div className="hidden items-center gap-1 lg:flex">
+            {links.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={buttonVariants({ variant: "ghost", size: "sm" })}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Button
+              size="sm"
+              onClick={() => setShowLogin(true)}
+              className="lg:block hidden"
             >
-              Website for professionals
-            </Link>
+              Login
+            </Button>
 
             <ClientLogin>
-            <Button
-                  size="lg"
-                  className="h-14 bg-primary px-8 font-sans font-medium text-primary-foreground hover:bg-primary/90"
-                >
-                  Register 
-                </Button>
+              <Button
+                size="sm"
+                className="h-10 px-6"
+              >
+                Register
+              </Button>
             </ClientLogin>
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
+                <Button variant="outline" size="icon" className="lg:hidden">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col gap-4 mt-8">
-                  <Link
-                    href="#jobs"
-                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
-                  >
-                    Find Work
-                  </Link>
-                  <Link
-                    href="#talent"
-                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
-                  >
-                    Find Talent
-                  </Link>
-                  <Link
-                    href="#how"
-                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
-                  >
-                    How It Works
-                  </Link>
-                  <div className="border-t border-border my-2" />
-                  <Link
-                    href="/professionals"
-                    className="px-4 py-3 font-sans text-base font-medium text-foreground/80 transition-all duration-200 hover:text-foreground hover:bg-accent/50 rounded-lg"
-                  >
-                    Website for professionals
-                  </Link>
-                </nav>
+
+              <SheetContent
+                side="left"
+                className="bg-background/95 supports-[backdrop-filter]:bg-background/80 gap-0 backdrop-blur-lg"
+                showClose={false}
+              >
+                <div className="grid gap-y-2 overflow-y-auto px-4 pt-12 pb-5">
+                  {links.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className={buttonVariants({
+                        variant: "ghost",
+                        className: "justify-start",
+                      })}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="mt-auto flex flex-col gap-2 p-4 bg-muted/30 border-t">
+                  <Button variant="outline" onClick={() => setShowLogin(true)}>
+                    Sign In
+                  </Button>
+                  <Button onClick={() => setShowSignup(true)}>
+                    Get Started
+                  </Button>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
-        </div>
+        </nav>
       </header>
+
       <LoginModal
         open={showLogin}
         onOpenChange={setShowLogin}
@@ -124,6 +128,7 @@ export function Header() {
           setShowSignup(true)
         }}
       />
+
       <SignupModal
         open={showSignup}
         onOpenChange={setShowSignup}
