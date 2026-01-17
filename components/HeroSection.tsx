@@ -14,27 +14,27 @@ interface ServiceCard {
 
 const services: ServiceCard[] = [
   {
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=500&fit=crop",
+    image: "/photo-1557804506-669a67965ba0.jfif",
     category: "DEVELOPMENT",
     title: "Web Development",
   },
   {
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=500&fit=crop",
+    image: "/photo-1561070791-2526d30994b5.jfif",
     category: "DESIGN",
     title: "Brand Identity",
   },
   {
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=500&fit=crop",
-    category: "MARKETING",
-    title: "Digital Marketing",
+    image: "/emmanuel-ikwuegbu--0-kl1BjvFc-unsplash.jpg",
+    category: "PLUMBING",
+    title: "Residential Plumbing",
   },
   {
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=500&fit=crop",
-    category: "CONSULTING",
-    title: "Business Strategy",
+    image: "/premium_photo-1663012852133-96e65ca2cf9a.jpg",
+    category: "TUTORING",
+    title: "In-Person Tutoring",
   },
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=500&fit=crop",
+    image: "/photo-1460925895917-afdab827c52f.jfif",
     category: "ANALYTICS",
     title: "Data Analysis",
   },
@@ -106,8 +106,8 @@ export function HeroSection() {
             </Button>
           </motion.div>
 
-          {/* Social Proof */}
-          <motion.div
+          {/* Social Proof 
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
@@ -125,6 +125,8 @@ export function HeroSection() {
             </div>
             <span className="font-sans text-sm font-medium text-[#4a5568]">Join over 10,000+ professionals</span>
           </motion.div>
+          */}
+          
         </motion.div>
       </div>
 
