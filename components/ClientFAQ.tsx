@@ -1,6 +1,11 @@
 "use client"
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const faqs = [
   {
@@ -23,33 +28,53 @@ const faqs = [
     answer:
       "Our platform helps you save time and money while ensuring high-quality services and peace of mind. You can choose from a wide range of verified specialists.",
   },
-];
-
+]
 
 export function ClientFAQ() {
   return (
-    <section className="py-24 border-t border-border/40">
+    <section className="py-24 w-full border-t border-border/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <div className="text-center mb-12">
-            <h2 className="font-sans text-4xl font-bold tracking-tight mb-4">Frequently Asked Questions</h2>
+          {/* Header */}
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground">
+              Frequently Asked Questions
+            </h2>
             <p className="font-sans text-lg text-muted-foreground">
               Everything you need to know about working on Quickhands
             </p>
           </div>
 
+          {/* FAQ Cards */}
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-border bg-card rounded-lg px-6 data-[state=open]:bg-card/80 transition-colors"
+                className={[
+                  "rounded-xl",
+                  "bg-card text-card-foreground",
+                  "border border-border/60",
+                  "shadow-sm dark:shadow-black/10",
+                  "transition-colors",
+                ].join(" ")}
               >
-                <AccordionTrigger className="font-sans text-left text-lg font-semibold hover:text-primary hover:no-underline py-6">
+                <AccordionTrigger
+                  className={[
+                    "px-6 py-5",
+                    "text-left font-sans text-lg font-medium",
+                    "hover:no-underline",
+                    "data-[state=open]:border-b",
+                    "data-[state=open]:border-border/60",
+                  ].join(" ")}
+                >
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="font-sans text-muted-foreground leading-relaxed pb-6">
-                  {faq.answer}
+
+                <AccordionContent className="px-6 pt-4 pb-6">
+                  <p className="font-sans text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </AccordionContent>
               </AccordionItem>
             ))}

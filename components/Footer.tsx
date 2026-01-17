@@ -1,108 +1,113 @@
-import Image from "next/image";
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { ChevronRight } from "lucide-react"
+
+
+const footerLinks = {
+  forClients: [
+    { title: "Post a Project", href: "#" },
+    { title: "Find Talent", href: "#" },
+    { title: "How to Hire", href: "#" },
+    { title: "Enterprise", href: "#" },
+  ],
+  forSpecialists: [
+    { title: "Find Work", href: "#" },
+    { title: "Create Profile", href: "#" },
+    { title: "How to Win Jobs", href: "#" },
+    { title: "Success Stories", href: "#" },
+  ],
+  company: [
+    { title: "About Us", href: "#" },
+    { title: "Contact", href: "#" },
+    { title: "Terms of Service", href: "#" },
+    { title: "Privacy Policy", href: "#" },
+  ],
+}
 
 export function Footer() {
+  
+
   return (
-    <footer className="border-t border-border/40 py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Image
-              src="/quickhands.png"
-              alt="Quickhands Logo"
-              width={24}
-              height={24}
-              />
-              <span className="font-sans text-lg font-bold">Quickhands</span>
-            </div>
-            <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-              The complete platform specialists and.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-sans mb-4 font-semibold">For Clients</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Post a Project
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Find Talent
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  How to Hire
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Enterprise
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-sans mb-4 font-semibold">For Specialists</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Find Work
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Create Profile
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  How to Win Jobs
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Success Stories
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-sans mb-4 font-semibold">Company</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-sans hover:text-foreground transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
-          </div>
+    <footer id="footer" className="w-full pb-0">
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between p-10 container mx-auto">
+        {/* Left side - Logo and description */}
+        <div className="flex flex-col items-start justify-start gap-y-5 max-w-xs mx-0">
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/quickhands.png" alt="Quickhands Logo" width={32} height={32} />
+            <p className="text-xl font-bold text-foreground font-sans">Quickhands</p>
+          </Link>
+          <p className="tracking-tight text-muted-foreground font-medium font-sans leading-relaxed">
+            The complete platform specialists and.
+          </p>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p className="font-sans">&copy; 2026 Quickhands. All rights reserved.</p>
+        {/* Right side - Links */}
+        <div className="pt-5 md:pt-0 md:w-1/2">
+          <div className="flex flex-col items-start justify-start md:flex-row md:items-start md:justify-between gap-y-8 lg:pl-10">
+            {/* For Clients */}
+            <ul className="flex flex-col gap-y-2">
+              <li className="mb-2 text-sm font-semibold text-foreground font-sans">For Clients</li>
+              {footerLinks.forClients.map((link) => (
+                <li
+                  key={link.title}
+                  className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
+                >
+                  <Link href={link.href} className="font-sans hover:text-foreground transition-colors">
+                    {link.title}
+                  </Link>
+                  <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
+                    <ChevronRight className="h-3 w-3" />
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            {/* For Specialists */}
+            <ul className="flex flex-col gap-y-2">
+              <li className="mb-2 text-sm font-semibold text-foreground font-sans">For Specialists</li>
+              {footerLinks.forSpecialists.map((link) => (
+                <li
+                  key={link.title}
+                  className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
+                >
+                  <Link href={link.href} className="font-sans hover:text-foreground transition-colors">
+                    {link.title}
+                  </Link>
+                  <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
+                    <ChevronRight className="h-3 w-3" />
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            {/* Company */}
+            <ul className="flex flex-col gap-y-2">
+              <li className="mb-2 text-sm font-semibold text-foreground font-sans">Company</li>
+              {footerLinks.company.map((link) => (
+                <li
+                  key={link.title}
+                  className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
+                >
+                  <Link href={link.href} className="font-sans hover:text-foreground transition-colors">
+                    {link.title}
+                  </Link>
+                  <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
+                    <ChevronRight className="h-3 w-3" />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
+
+      {/* Flickering Grid Section */}
+      <div className="mt-12 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+          <p className="font-sans">&copy; 2026 Quickhands. All rights reserved.</p>
+        </div>
+      
     </footer>
   )
 }

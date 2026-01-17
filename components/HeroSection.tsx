@@ -1,41 +1,210 @@
 "use client"
 
+import { motion } from "framer-motion"
+import { Search, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Search } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+interface ServiceCard {
+  image: string
+  category: string
+  title: string
+}
+
+const services: ServiceCard[] = [
+  {
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=500&fit=crop",
+    category: "DEVELOPMENT",
+    title: "Web Development",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=500&fit=crop",
+    category: "DESIGN",
+    title: "Brand Identity",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=500&fit=crop",
+    category: "MARKETING",
+    title: "Digital Marketing",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=500&fit=crop",
+    category: "CONSULTING",
+    title: "Business Strategy",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=500&fit=crop",
+    category: "ANALYTICS",
+    title: "Data Analysis",
+  },
+]
+
+const avatars = [
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+  "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+]
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border/40">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98120_1px,transparent_1px),linear-gradient(to_bottom,#10b98120_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+    <section
+      className={cn("relative w-full min-h-screen flex flex-col overflow-hidden")}
+      style={{
+        background: "linear-gradient(180deg, #E8F0FF 0%, #F5F9FF 50%, #FFFFFF 100%)",
+      }}
+      role="banner"
+      aria-label="Hero section"
+    >
+      {/* Premium subtle grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a08_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
 
-      <div className="container relative mx-auto px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="font-sans text-balance text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-7xl sm:leading-tight">
-          Quickly find the right  <span className="text-primary">Specialists</span> for your tasks.
+      {/* Main Content */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-24 pb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-col items-center text-center max-w-4xl gap-8"
+        >
+          {/* Title */}
+          <h1 className="font-sans text-balance font-bold leading-[1.1] tracking-tight text-[#1a1a1a] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            Quickly find the right{" "}
+            <span className="bg-gradient-to-r from-[#1a1a1a] via-[#4a5568] to-[#1a1a1a] bg-clip-text text-transparent">
+              Specialists
+            </span>{" "}
+            for your tasks.
           </h1>
-          <p className="font-sans mt-6 text-balance text-lg leading-relaxed text-muted-foreground sm:text-xl">
+
+          {/* Subtitle */}
+          <p className="font-sans text-balance text-lg sm:text-xl leading-relaxed text-[#4a5568] max-w-2xl">
             0 clients have already connected with trusted professionals on our platform.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
-            <div className="relative flex-1 max-w-2xl">
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+          {/* Search Bar */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-full max-w-2xl flex flex-col sm:flex-row items-center gap-4"
+          >
+            <div className="relative flex-1 w-full">
+              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#4a5568]" />
               <Input
                 type="text"
                 placeholder="Specialist or services"
-                className="font-sans h-14 pl-12 pr-4 text-base bg-card border-border"
+                className="h-14 pl-12 pr-4 text-base bg-white border-[#e2e8f0] rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] focus:shadow-[0_4px_24px_rgba(0,0,0,0.12)] transition-shadow placeholder:text-[#718096]"
               />
             </div>
             <Button
               size="lg"
-              className="font-sans h-14 bg-primary text-primary-foreground hover:bg-primary/90 px-8 font-medium"
+              className="h-14 px-8 font-medium rounded-full bg-[#1a1a1a] text-white hover:bg-[#2d2d2d] hover:scale-105 transition-all shadow-[0_4px_16px_rgba(0,0,0,0.15)] flex items-center gap-2"
             >
               Search
+              <ArrowRight className="h-5 w-5" />
             </Button>
-          </div>
-        </div>
+          </motion.div>
+
+          {/* Social Proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex flex-row items-center gap-3"
+          >
+            <div className="flex flex-row -space-x-3">
+              {avatars.map((avatar, index) => (
+                <img
+                  key={index}
+                  src={avatar || "/placeholder.svg"}
+                  alt={`Professional ${index + 1}`}
+                  className="rounded-full border-2 border-white w-10 h-10 object-cover shadow-md"
+                />
+              ))}
+            </div>
+            <span className="font-sans text-sm font-medium text-[#4a5568]">Join over 10,000+ professionals</span>
+          </motion.div>
+        </motion.div>
       </div>
+
+      {/* Service Cards Carousel */}
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.8 }}
+        className="relative z-10 w-full overflow-hidden py-12"
+      >
+        {/* Gradient Overlays */}
+        <div
+          className="absolute left-0 top-0 bottom-0 z-10 pointer-events-none w-[150px]"
+          style={{
+            background: "linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
+          }}
+        />
+        <div
+          className="absolute right-0 top-0 bottom-0 z-10 pointer-events-none w-[150px]"
+          style={{
+            background: "linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)",
+          }}
+        />
+
+        {/* Scrolling Container */}
+        <motion.div
+          className="flex items-center gap-6 pl-6"
+          animate={{
+            x: [0, -((services.length * 380) / 2)],
+          }}
+          transition={{
+            x: {
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "loop",
+              duration: services.length * 4,
+              ease: "linear",
+            },
+          }}
+        >
+          {/* Duplicate services for seamless loop */}
+          {[...services, ...services].map((service, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="flex-shrink-0 cursor-pointer relative overflow-hidden rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+              style={{
+                width: "320px",
+                height: "420px",
+              }}
+            >
+              {/* Image */}
+              <img
+                src={service.image || "/placeholder.svg"}
+                alt={service.title}
+                className="w-full h-full object-cover"
+              />
+
+              {/* Premium Gradient Overlay */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.75) 100%)",
+                }}
+              />
+
+              {/* Shine effect */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Text Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-2">
+                <span className="font-sans text-xs font-medium text-white/80 uppercase tracking-[0.15em]">
+                  {service.category}
+                </span>
+                <h3 className="font-sans text-2xl font-semibold text-white leading-tight">{service.title}</h3>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
