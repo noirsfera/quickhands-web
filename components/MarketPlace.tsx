@@ -255,45 +255,67 @@ export default function Marketplace() {
         </div>
 
         {/* App Banner */}
-        <div className="mt-24 overflow-hidden rounded-xl border border-border bg-card">
-          <div className="grid gap-8 p-10 md:grid-cols-2 md:items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-foreground">
-                The Quickhands app is launching in January
-              </h3>
-              <p className="mt-3 max-w-md text-muted-foreground">
-                Be the first to get access by joining
-                <span className="font-medium text-primary"> the waitlist</span>.
-              </p>
+<div className="relative mt-32 overflow-hidden rounded-3xl bg-emerald-500">
+  {/* Decorative gradients */}
+  <div className="pointer-events-none absolute inset-0">
+    <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-emerald-400/40 blur-3xl" />
+    <div className="absolute -bottom-40 -right-40 h-[28rem] w-[28rem] rounded-full bg-lime-300/40 blur-3xl" />
+  </div>
 
-              <div className="mt-6 flex flex-wrap gap-4">
-                <Button className="bg-primary text-primary-foreground">
-                  App Store
-                </Button>
-                <Button variant="outline" className="border-primary text-primary">
-                  Google Play
-                </Button>
-                <Button variant="outline" className="border-primary text-primary">
-                  Huawei AppGallery
-                </Button>
-              </div>
-            </div>
+  <div className="relative z-10 grid gap-12 px-8 py-16 md:grid-cols-2 md:items-center md:px-16">
+      {/* Text content */}
+      <div className="text-white">
+        <h3 className="text-4xl font-extrabold leading-tight md:text-5xl">
+          Your work deserves
+          <span className="block text-emerald-100"> better tools.</span>
+        </h3>
 
-            <div className="flex justify-center">
-              <div className="rounded-xl border border-border bg-background p-4">
-                <Image
-                  src="/qr-placeholder.png"
-                  alt="Download QR code"
-                  width={140}
-                  height={140}
-                />
-                <p className="mt-3 text-center text-xs text-muted-foreground">
-                  Scan to download
-                </p>
-              </div>
-            </div>
-          </div>
+        <p className="mt-4 max-w-lg text-lg text-emerald-50/90">
+          The <span className="font-semibold">Quickhands</span> app launches in
+          January. Join the waitlist and be the first to experience faster,
+          smarter workflows.
+        </p>
+
+        {/* Store buttons */}
+        <div className="mt-8 flex flex-wrap gap-4">
+          <button className="flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-600 shadow-lg transition hover:scale-[1.02]">
+            <Image
+              src="/icons/app-store.svg"
+              alt="App Store"
+              width={20}
+              height={20}
+            />
+            App Store
+          </button>
+
+          <button className="flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-emerald-600 shadow-lg transition hover:scale-[1.02]">
+            <Image
+              src="/icons/google-play.svg"
+              alt="Google Play"
+              width={20}
+              height={20}
+            />
+            Google Play
+          </button>
         </div>
+      </div>
+
+      {/* Demo image – FIXED */}
+      <div className="flex justify-center md:justify-end">
+        <div className="relative rounded-3xl bg-emerald-600 p-4 shadow-2xl">
+          <Image
+            src="/demo.png"
+            alt="Quickhands app demo"
+            width={360}
+            height={720}
+            className="rounded-2xl"
+            priority
+          />
+        </div>
+      </div>
+    </div>
+</div>
+
       </div>
     </section>
   )
