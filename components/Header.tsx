@@ -19,6 +19,7 @@ export function Header() {
     { label: "Find Work", href: "#jobs" },
     { label: "Find Talent", href: "#talent" },
     { label: "How It Works", href: "#how" },
+    { label: "Website for Professionals", href: "/professionals" },
   ]
 
   return (
