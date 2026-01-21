@@ -23,8 +23,7 @@ export function HowItWorks() {
             A frictionless way to get work done
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Designed to remove uncertainty, reduce back-and-forth, and help you
-            move from idea to execution with confidence.
+          Hire vetted specialists for your tasks and get them done without the back-and-forth
           </p>
         </div>
 
