@@ -52,7 +52,7 @@ export function HowItWorks() {
               <Card className="relative h-full overflow-hidden rounded-[27px] border-0 bg-background shadow-xl">
                 <div className="relative h-[420px]">
                   <Image
-                    src="/hairdresser.jpg"
+                    src="/work.jpg"
                     alt="Professionals collaborating"
                     fill
                     className="object-cover"
