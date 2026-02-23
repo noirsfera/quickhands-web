@@ -61,13 +61,15 @@ export function Footer() {
             <div className="flex items-center gap-4 pt-1">
               <Link
                 href="https://www.tiktok.com/@quickhands.app"
+                target="_blank"
                 aria-label="TikTok"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <TikTokIcon />
               </Link>
               <Link
-                href="https://www.tiktok.com/@quickhands.app"
+                href="https://www.instagram.com/quickhands.app"
+                target="_blank"
                 aria-label="Instagram"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -75,6 +77,7 @@ export function Footer() {
               </Link>
               <Link
                 href="https://www.facebook.com/share/181GvFUCXq/?mibextid=wwXIfr"
+                target="_blank"
                 aria-label="Facebook"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
